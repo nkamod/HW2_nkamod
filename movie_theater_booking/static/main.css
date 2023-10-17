@@ -20,6 +20,7 @@ nav .navbar-brand > span {
 }
 
 nav .nav-item > a {
+    cursor: pointer !important;
     color: #a2a2a4;
     font-family: 'IBM Plex Sans', sans-serif;
     transition-duration: 800ms;

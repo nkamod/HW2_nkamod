@@ -4,4 +4,34 @@
 
 {% block content %}
 
+<div class="hero">
+    <div class="slider">
+        <div class="overlay"></div>
+
+        <div class="slide">
+            <img src="https://source.unsplash.com/random?landscape,mountain">
+        </div>
+        <div class="slide">
+            <img src="https://source.unsplash.com/random?landscape,cars">
+        </div>
+        <div class="slide">
+            <img src="https://source.unsplash.com/random?landscape,night">
+        </div>
+        <div class="slide">
+            <img src="https://source.unsplash.com/random?landscape,city">
+        </div>
+
+        <button class="btn btn-next">
+            <span class="material-symbols-outlined">
+            chevron_right
+            </span>
+        </button>
+        <button class="btn btn-prev">
+            <span class="material-symbols-outlined">
+                chevron_left
+            </span>
+        </button>
+    </div>
+</div>
+
 {% endblock content %}
