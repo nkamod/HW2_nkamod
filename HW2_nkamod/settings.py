@@ -27,7 +27,7 @@ DEBUG = True
 
 # The mentioned allowed host is temporary
 ALLOWED_HOSTS = [
-    'ab52-128-198-110-123.ngrok-free.app',
+    '4635-128-198-106-55.ngrok-free.app',
     'localhost'
 ]
 

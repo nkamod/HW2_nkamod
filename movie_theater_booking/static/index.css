@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
 .hero {
     height: 60vh;
     display: grid;
@@ -17,7 +19,7 @@
     width: 100%;
     height: 60vh;
     position: absolute;
-    background-color: rgba(0, 0, 0, .6);
+    background-image: radial-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 1));
     z-index: 5;
 }
 
@@ -62,3 +64,54 @@
     top: 45%;
     right: 2%;
 }
+
+.offer-bar {
+    height: 15vh;
+    background: radial-gradient(circle at center -90%, rgb(174, 1, 70) 10%, rgb(91, 0, 182) 35%,  rgb(14, 0, 28) 80%);
+}
+
+.offer-bar > img {
+    height: 90%;
+    background: radial-gradient(circle, rgba(255,255,255,.6) 22%, transparent 70%); 
+    padding: 20px;
+}
+
+.offer-bar > .offer-content > h5 > span {
+    font-size: .6rem !important;
+}
+
+.offer-bar > .offer-content > p {
+    font-size: .8rem;
+}
+
+.movies-grid-wrapper h4 {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.movies-grid-wrapper > .movies-grid > div {
+    cursor: pointer;
+}
+
+.movies-grid-wrapper > .movies-grid > div:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
+}
+
+.movies-grid-wrapper > .movies-grid > div > p:last-of-type > span {
+    color: #d00;
+}
+
+.movies-grid-wrapper > .movies-grid > div > p:last-of-type > span:hover {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px; /* adjust the font size as needed */
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+}
+

@@ -9,6 +9,14 @@ body {
     background-color: #16171b !important;
 }
 
+nav {
+    transition: background .5s ease;
+}
+
+nav.scrolled {
+    background: black !important;
+}
+
 nav .navbar-brand {
     font-weight: 600;
     letter-spacing: .2rem;
@@ -74,4 +82,13 @@ nav .nav-item:last-of-type > a {
 nav .nav-item:last-of-type > a:hover {
     transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
     background: rgb(193,17,25);
+}
+
+.divider {
+    height: 1px;
+    background: #a2a2a4;
+}
+
+footer {
+    background-color: black !important;
 }

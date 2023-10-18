@@ -1,0 +1,40 @@
+.signin-wrapper {
+    height: 100vh;
+}
+
+.signin-wrapper > div > h3 {
+    color: white !important;
+}
+
+.signin-wrapper > div > form > .form-group > input {
+    width: 300px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+.signin-wrapper > div > form > .form-group > input::placeholder {
+    color: white;
+    opacity: .6; /* Firefox */
+}
+
+.signin-wrapper > div > form > button {
+    background-color: #e50914 !important;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    transition: all .5s ease;
+}
+
+.signin-wrapper > div > form > button:hover {
+    background-color: #c7030d !important;
+}
+
+.signin-wrapper > div > p {
+    color: #737373;
+}
+
+.signin-wrapper > div > p > a {
+    color: white;
+}
