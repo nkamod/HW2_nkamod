@@ -24,6 +24,7 @@
     border: none;
     color: white;
     border-radius: 5px;
+    width: 300px;
     transition: all .5s ease;
 }
 

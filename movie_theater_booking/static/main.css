@@ -57,7 +57,7 @@ nav .nav-item > a:hover span {
     color: #a2a2a4 !important;
 }
 
-nav .nav-item:last-of-type > a {
+nav .nav-item.signin > a {
     background-color: rgb(229, 9, 20);
     font-size: 0.875rem;
     color: white;
@@ -79,7 +79,7 @@ nav .nav-item:last-of-type > a {
     padding: 0.25rem 1rem;
 }
 
-nav .nav-item:last-of-type > a:hover {
+nav .nav-item.signin > a:hover {
     transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
     background: rgb(193,17,25);
 }
