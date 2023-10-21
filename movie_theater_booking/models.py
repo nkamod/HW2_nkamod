@@ -1,18 +1,29 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
-class Author(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    birth_date = models.DateField()
+class Movie(models.Model):
+    title = models.CharField(max_length=300)
+    poster = models.CharField(max_length=500)
+    trailer = models.CharField(max_length=300)
+    description = models.CharField(max_length=500)
+    rating = models.FloatField()
+    cast = models.CharField(max_length=100) # Json string
+    runtime = models.IntegerField() # In minutes
+    release_year = models.IntegerField(default=None)
 
-    def __str__(self) -> str:
-        return f"{self.first_name} {self.last_name}"
-    
-class Book(models.Model):
+class Genre(models.Model):
     title = models.CharField(max_length=100)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    publication_date = models.DateField()
 
-    def __str__(self) -> str:
-        return self.title
+class MoviesGenresLink(models.Model):
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+class Show(models.Model):
+    timing = models.DateTimeField()
+    price = models.FloatField()
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+
+class Booking(models.Model):
+    date = models.DateTimeField()
+    seat_no = models.CharField(max_length=5)
+    show = models.ForeignKey(Show, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)

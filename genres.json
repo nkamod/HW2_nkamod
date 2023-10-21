@@ -1,0 +1,163 @@
+[
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 1,
+      "fields": {
+        "title": "comedy"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 2,
+      "fields": {
+        "title": "fantasy"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 3,
+      "fields": {
+        "title": "romance"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 4,
+      "fields": {
+        "title": "crime"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 5,
+      "fields": {
+        "title": "drama"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 6,
+      "fields": {
+        "title": "thriller"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 7,
+      "fields": {
+        "title": "horror"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 8,
+      "fields": {
+        "title": "mystery"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 9,
+      "fields": {
+        "title": "sci-fi"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 10,
+      "fields": {
+        "title": "action"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 11,
+      "fields": {
+        "title": "adventure"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 12,
+      "fields": {
+        "title": "animation"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 13,
+      "fields": {
+        "title": "family"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 14,
+      "fields": {
+        "title": "musical"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 15,
+      "fields": {
+        "title": "history"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 16,
+      "fields": {
+        "title": "war"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 17,
+      "fields": {
+        "title": "biography"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 18,
+      "fields": {
+        "title": "sport"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 19,
+      "fields": {
+        "title": "music"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 20,
+      "fields": {
+        "title": "documentary"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 21,
+      "fields": {
+        "title": "western"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 22,
+      "fields": {
+        "title": "short"
+      }
+    },
+    {
+      "model": "movie_theater_booking.genre",
+      "pk": 23,
+      "fields": {
+        "title": "reality-tv"
+      }
+    }
+  ]
