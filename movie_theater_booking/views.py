@@ -2,10 +2,13 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.utils import timezone
 from .forms import RegistrationForm
-from .models import Movie, MoviesGenresLink, Show
+from .models import Movie, MoviesGenresLink, Show, Booking
 import datetime
-
+from django.contrib.auth.decorators import login_required
+import string
+import json
 
 # Create your views here.
 def index(request):
@@ -35,17 +38,26 @@ def registerUser(request):
     )
 
 
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+
 def loginUser(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
+        next_page = request.GET.get('next')  # Get the 'next' parameter from the URL
 
         if username and password:
             user = authenticate(username=username, password=password)
 
             if user is not None:
                 login(request, user)
-                return redirect("index")
+                
+                if next_page:
+                    return redirect(next_page)  # Redirect to the 'next' page if it exists
+                else:
+                    return redirect("index")  # Redirect to a default page if 'next' is not specified
             else:
                 messages.error(request, "Username or password is incorrect.")
 
@@ -97,6 +109,7 @@ def movie(request, movie_id):
         request,
         "movie.html",
         {
+            "user": request.user if request.user.is_authenticated else None,
             "movie": movie,
             "genres": genres,
             "show_dates": date_array,
@@ -104,3 +117,32 @@ def movie(request, movie_id):
             "shows": shows
         },
     )
+
+@login_required(login_url="signin")
+def show(request, show_id):
+
+    show = Show.objects.get(pk=show_id)
+    chars = list(string.ascii_uppercase[:10])
+    seat_config = [[f'{chars[j]}{i}' for i in range(20)] for j in range(10)]
+
+    return render(request, "show.html", { "show": show, "seat_config": seat_config })
+
+@login_required(login_url="signin")
+def bookShow(request):
+
+    data = json.loads(request.body)
+    show = Show.objects.get(pk=int(data.get("pk")))
+
+    for seat in data.get("selectedSeats"):
+        booking = Booking(date=timezone.now(), seat_no=seat, show=show, user=request.user)
+        booking.save()
+
+    return JsonResponse({'redirect': 'bookings'})
+
+@login_required(login_url="signin")
+def bookings(request):
+
+    bookings = Booking.objects.filter(user__lte=request.user).order_by("date")
+
+    # bookings[0].show.movie.title
+    return render(request, "bookings.html", { "bookings": bookings })

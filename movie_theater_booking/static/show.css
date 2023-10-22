@@ -1,0 +1,72 @@
+.screen {
+    width: 330px;
+    background-color: white;
+    text-align: center;
+    margin-top: 50px;
+    font-size: .7rem;
+    border-radius: 3px;
+}
+
+.trapezoid {
+    width: 400px;
+    height: 100px;
+    margin-top: -28px;
+    margin-bottom: 30px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .8) 0%, transparent 100%);
+    border-radius: 10px 10px 0 0;
+    transform: perspective(4px) rotateX(1deg);
+}
+
+.checkbox-wrapper {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 20px;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-wrapper input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    background-color: #a2a2a4;
+    border-radius: 5px 5px 0 0;
+    font-size: .8rem;
+    text-align: center;
+}
+
+.checkbox-wrapper:hover input~.checkmark {
+    background-color: white;
+}
+
+.checkbox-wrapper input:checked~.checkmark {
+    background-color: white;
+}
+
+#seats-selected {
+    max-width: 600px;
+}
+
+#seats-selected > p {
+    background-color: #31333d;
+    padding: 7px 10px;
+    border-radius: 5px;
+}

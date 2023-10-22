@@ -1,4 +1,4 @@
-function sendGetRequest(selectedDate) {
+function getShowTimes(selectedDate) {
     event.preventDefault();
 
     $.ajax({

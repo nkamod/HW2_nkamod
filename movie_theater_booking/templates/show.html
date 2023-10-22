@@ -4,6 +4,36 @@
 
 {% block content %}
 
+<div class="container" style="margin-top: 50px; margin-bottom: 50px;">
+    <h1 class="text-center text-white mb-5">Select Seats</h1>
 
+    <h3 class="text-white text-center">{{ show.movie.title }}</h3>
+    <h6 class="text-center" style="color: #a2a2a4;">{{ show.timing }}</h6>
+
+    <div class="container">
+        <div class="screen mx-auto">
+            <p>Screen</p>
+        </div>
+        <div class="trapezoid mx-auto"></div>
+        <div>
+            {% for i in seat_config %}
+            <div id="seat-config" class="d-flex flex-row justify-content-center align-items-center gap-1 mt-1">
+                {% for j in i %}
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" name="{{ j }}" id="{{ j }}" onclick="seatSelected('{{j}}', '{{ show.price }}')">
+                        <span class="checkmark">{{ j }}</span>
+                    </label>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <div class="mt-5 d-flex flex-column justify-content-center align-items-center">
+                <h3 class="text-white">Selected Seats</h3>
+                <div id="seats-selected" class="d-flex flex-row gap-2 flex-wrap">
+                </div>
+                <button class="btn btn-success mt-2" id="btn-book" onclick="bookTicket('{{ show.pk }}')">Book @ $0</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}

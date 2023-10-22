@@ -40,15 +40,15 @@
             <h3 class="mt-4 text-white">Shows</h3>
             <div class="mt-3 d-flex flex-row w-100">
                 {% for date in show_dates %}
-                    <button class="btn btn-date {% if date == current_date %}active{% endif %}" onclick="sendGetRequest('{{ date }}')">{{ date }}</button>
+                    <button class="btn btn-date {% if date == current_date %}active{% endif %}" onclick="getShowTimes('{{ date }}')">{{ date }}</button>
                 {% endfor %}
             </div>
             <div class="divider mt-2"></div>
             <div class="mt-2 d-flex flex-row flex-wrap gap-2" id="show-times-wrapper">
                 {% for show in shows %}
-                <button class="btn btn-time">
+                <a href="{% url 'show' show.pk %}" class="btn btn-time">
                     {{ show.timing.hour }}:{{ show.timing.minute }}
-                </button>
+                </a>
                 {% endfor %}
             </div>
         </div>
