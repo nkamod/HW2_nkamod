@@ -26,19 +26,20 @@
         crossorigin="anonymous"></script>
 
     <script src="{% static 'main.js' %}"></script>
-    <script src="{% static 'auth.js' %}"></script>
+    <script src="{% static 'movie.js' %}"></script>
 
     <link rel="icon" href="{% static 'assets/site_favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'auth.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'movie.css' %}">
 
     <title>Apex Cinema</title>
 </head>
 
 <body>
     {% if not disabled_navbar_footer %}
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-transparent">
+    <nav class="navbar navbar-expand-lg {{ navbar_fixed_top }} navbar-dark bg-transparent">
         <div class="container">
             <a class="navbar-brand text-uppercase text-white font-weight-bold" href="/">
                 <img src="{% static 'assets/apex_icon.svg' %}" class="d-inline-block align-top" alt="Logo" width="40">

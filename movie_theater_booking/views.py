@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import RegistrationForm
-from .models import Movie
+from .models import Movie, MoviesGenresLink, Show
+import datetime
 
 
 # Create your views here.
@@ -14,6 +16,7 @@ def index(request):
         "index.html",
         {
             "user": request.user if request.user.is_authenticated else None,
+            "navbar_fixed_top": "fixed-top",
             "movies": movies,
         },
     )
@@ -55,3 +58,49 @@ def loginUser(request):
 def logoutUser(request):
     logout(request)
     return redirect("index")
+
+
+def movie(request, movie_id):
+
+    selected_date = request.GET.get('selected_date', None)
+
+    current_date = datetime.datetime.now()
+
+    if selected_date:
+        current_year = datetime.datetime.now().year
+        current_date = datetime.datetime.strptime(f"{selected_date} {current_year}", '%d %b %Y')
+
+        serialized_shows = [
+            {
+                "pk": show.pk,
+                "hour": show.timing.hour,
+                "minute": show.timing.minute
+            }
+            for show in Show.objects.filter(movie_id=movie_id, timing__date=current_date.date()).order_by("timing")
+        ]
+
+        return JsonResponse({
+            "count": len(serialized_shows),
+            "shows": serialized_shows
+        })
+
+    movie = Movie.objects.get(pk=movie_id)
+    genres = MoviesGenresLink.objects.filter(movie__lte=movie_id)
+    shows = Show.objects.filter(movie_id=movie_id, timing__date=current_date.date()).order_by("timing")
+
+    date_array = [
+        (current_date + datetime.timedelta(days=i)).strftime("%d %b")
+        for i in range(5)
+    ]
+
+    return render(
+        request,
+        "movie.html",
+        {
+            "movie": movie,
+            "genres": genres,
+            "show_dates": date_array,
+            "current_date": current_date.strftime("%d %b"),
+            "shows": shows
+        },
+    )

@@ -88,19 +88,19 @@
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
-.movies-grid-wrapper > .movies-grid > div {
+.movies-grid-wrapper > .movies-grid > a {
     cursor: pointer;
 }
 
-.movies-grid-wrapper > .movies-grid > div:hover {
+.movies-grid-wrapper > .movies-grid > a:hover {
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
 }
 
-.movies-grid-wrapper > .movies-grid > div > p:last-of-type > span {
+.movies-grid-wrapper > .movies-grid > a > p:last-of-type > span {
     color: #d00;
 }
 
-.movies-grid-wrapper > .movies-grid > div > p:last-of-type > span:hover {
+.movies-grid-wrapper > .movies-grid > a > p:last-of-type > span:hover {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;

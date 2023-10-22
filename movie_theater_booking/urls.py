@@ -7,5 +7,6 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("signup", views.registerUser, name="signup"),
     path("signin", views.loginUser, name="signin"),
-    path("logout", views.logoutUser, name="logout")
+    path("logout", views.logoutUser, name="logout"),
+    path("movie/<int:movie_id>", views.movie, name="movie")
 ]

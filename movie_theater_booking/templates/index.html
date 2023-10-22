@@ -47,12 +47,12 @@
     <h4 class="text-white">Apex Cinema Union Blvd. Colorado Springs</h4>
     <div class="movies-grid row">
         {% for movie in movies %}
-        <div class="col-sm-3 my-1 py-2">
+        <a href="{% url 'movie'  movie.pk %}" class="col-sm-3 my-1 py-2">
             <img class="w-100" src="{{ movie.poster }}" height="450" alt="Movie Poster 1">
             <p class="text-center text-white py-2 m-0">{{ movie.title }}</p>
             <div class="w-100 divider"></div>
             <p class="text-center text-white py-2 m-0"><span class="material-symbols-outlined d-inline-block align-top">favorite</span>&nbsp;Add to watch list</p>
-        </div>
+        </a>
         {% endfor %}
     </div>
 </div>

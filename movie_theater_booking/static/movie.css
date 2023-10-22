@@ -1,0 +1,37 @@
+.movie-metadata > div > p {
+    margin: 0;
+    color: white;
+}
+
+.movie-metadata > div > p:first-of-type {
+    color: #a2a2a4;
+}
+
+.movie-metadata > div:last-of-type > p:last-of-type > span {
+    background-color: #31333d;
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+
+.btn-date {
+    min-width: 100px;
+    color: #a2a2a4;
+}
+
+.btn-date:hover {
+    color: white;
+}
+
+.btn-date.active {
+    color: rgb(229, 9, 20);
+}
+
+.btn-time {
+    border-color: white !important;
+    color: white;
+}
+
+.btn-time:hover {
+    border-color: #F10060 !important;
+    color: #F10060;
+}
