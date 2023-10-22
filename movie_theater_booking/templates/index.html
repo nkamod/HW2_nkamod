@@ -46,36 +46,14 @@
 <div class="movies-grid-wrapper container py-3" id="movies">
     <h4 class="text-white">Apex Cinema Union Blvd. Colorado Springs</h4>
     <div class="movies-grid row">
-        <div class="col-sm-3 my-1">
-            <img class="w-100" src="{% static 'assets/movie_poster_1.jpg' %}" alt="Movie Poster 1">
-            <p class="text-center text-white py-2 m-0">Spider Man</p>
+        {% for movie in movies %}
+        <div class="col-sm-3 my-1 py-2">
+            <img class="w-100" src="{{ movie.poster }}" height="450" alt="Movie Poster 1">
+            <p class="text-center text-white py-2 m-0">{{ movie.title }}</p>
             <div class="w-100 divider"></div>
             <p class="text-center text-white py-2 m-0"><span class="material-symbols-outlined d-inline-block align-top">favorite</span>&nbsp;Add to watch list</p>
         </div>
-        <div class="col-sm-3 my-1">
-            <img class="w-100" src="{% static 'assets/movie_poster_1.jpg' %}" alt="Movie Poster 1">
-            <p class="text-center text-white py-2 m-0">Spider Man</p>
-            <div class="w-100 divider"></div>
-            <p class="text-center text-white py-2 m-0"><span class="material-symbols-outlined d-inline-block align-top">favorite</span>&nbsp;Add to watch list</p>
-        </div>
-        <div class="col-sm-3 my-1">
-            <img class="w-100" src="{% static 'assets/movie_poster_1.jpg' %}" alt="Movie Poster 1">
-            <p class="text-center text-white py-2 m-0">Spider Man</p>
-            <div class="w-100 divider"></div>
-            <p class="text-center text-white py-2 m-0"><span class="material-symbols-outlined d-inline-block align-top">favorite</span>&nbsp;Add to watch list</p>
-        </div>
-        <div class="col-sm-3 my-1">
-            <img class="w-100" src="{% static 'assets/movie_poster_1.jpg' %}" alt="Movie Poster 1">
-            <p class="text-center text-white py-2 m-0">Spider Man</p>
-            <div class="w-100 divider"></div>
-            <p class="text-center text-white py-2 m-0"><span class="material-symbols-outlined d-inline-block align-top">favorite</span>&nbsp;Add to watch list</p>
-        </div>
-        <div class="col-sm-3 my-1">
-            <img class="w-100" src="{% static 'assets/movie_poster_1.jpg' %}" alt="Movie Poster 1">
-            <p class="text-center text-white py-2 m-0">Spider Man</p>
-            <div class="w-100 divider"></div>
-            <p class="text-center text-white py-2 m-0"><span class="material-symbols-outlined d-inline-block align-top">favorite</span>&nbsp;Add to watch list</p>
-        </div>
+        {% endfor %}
     </div>
 </div>
 
