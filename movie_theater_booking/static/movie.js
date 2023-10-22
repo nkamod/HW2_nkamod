@@ -14,14 +14,13 @@ function getShowTimes(selectedDate) {
             $(`.btn-date:contains('${selectedDate}')`).addClass("active");
 
             response.shows.forEach(show => {
-                const button = document.createElement("button");
+                const button = document.createElement("a");
+                button.href = "/show/" + show.pk;
                 button.classList.add("btn");
                 button.classList.add("btn-time")
                 button.innerText = `${show.hour}:${show.minute}`;
                 stw.appendChild(button);
             });
-
-
 
         },
         error: function(error) {
