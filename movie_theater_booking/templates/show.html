@@ -4,6 +4,14 @@
 
 {% block content %}
 
+<div class="backdrop d-none flex-column justify-content-center align-items-center" id="pop-up">
+    <div class="pop-up d-flex flex-column justify-content-center align-items-center">
+        <h1 class="text-white">Booking Successful</h1>
+        <img class="my-4" src="{% static 'assets/success.png' %}" width="100">
+        <a class="btn btn-success mt-2" href="{% url 'bookings' %}">Check Bookings</a>
+    </div>
+</div>
+
 <div class="container" style="margin-top: 50px; margin-bottom: 50px;">
     <h1 class="text-center text-white mb-5">Select Seats</h1>
 

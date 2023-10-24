@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.urls import reverse
 from django.contrib.auth.models import User
 
+# Unit Tests
 class MovieModelTest(TestCase):
     """
     Test class for movie model
@@ -274,3 +275,5 @@ class MovieTheaterBookingViewsTest(TestCase):
         self.client.login(username='testuser', password='testpassword')
         response = self.client.post(reverse('book_show'), data={"pk": 1, "selectedSeats": ["A1", "B2"]}, content_type="application/json")
         self.assertEqual(response.status_code, 200)
+
+# Integration Tests

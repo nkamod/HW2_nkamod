@@ -36,8 +36,6 @@ function bookTicket(pk) {
 
     const csrftoken = getCookie('csrftoken');
 
-    console.log(csrftoken);
-
     $.ajax({
         type: 'POST',
         url: '/book_show',
@@ -47,13 +45,19 @@ function bookTicket(pk) {
             xhr.setRequestHeader('X-CSRFToken', csrftoken);
         },
         success: function(response) {
+
+            const popup = $("#pop-up");
+
+            popup.removeClass("d-none");
+
+            popup.addClass("d-flex");
             
-            if (response.redirect) {
-                const baseUrl = window.location.protocol + "//" + window.location.host;
-                window.location.href = baseUrl + "/" + response.redirect;
-            } else {
-                console.log(response);
-            }
+            // if (response.redirect) {
+            //     const baseUrl = window.location.protocol + "//" + window.location.host;
+            //     window.location.href = baseUrl + "/" + response.redirect;
+            // } else {
+            //     console.log(response);
+            // }
 
         },
         error: function(error) {
