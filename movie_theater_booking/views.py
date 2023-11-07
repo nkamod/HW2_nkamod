@@ -10,7 +10,6 @@ from django.contrib.auth.decorators import login_required
 import string
 import json
 
-# Create your views here.
 def index(request):
     movies = Movie.objects.all()
 
@@ -23,7 +22,6 @@ def index(request):
             "movies": movies,
         },
     )
-
 
 def registerUser(request):
     form = RegistrationForm()
@@ -66,11 +64,9 @@ def loginUser(request):
 
     return render(request, "signin.html", {"disabled_navbar_footer": True})
 
-
 def logoutUser(request):
     logout(request)
     return redirect("index")
-
 
 def movie(request, movie_id):
 
