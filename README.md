@@ -1,20 +1,7 @@
 # Movie Theater Booking Application
 
 <p style="font-size: 2rem; font-weight:600; display: flex; gap: 10px; justify-content: center;">
-<svg width="66.4" height="46.8" viewBox="0 0 332 234" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M80.1673 150L116.513 66.0629C127.328 50.3224 145.459 40 166 40C186.224 40 204.111 50.0057 214.98 65.3369L251.207 149H251L287.064 232.287H331.232L295.6 150H295.808L262.016 71.9609C249.894 30.3806 211.495 0 166 0C121.034 0 82.9994 29.679 70.4173 70.5166L36 150H36.0644L0 233.287H44.1672L80.2317 150H80.1673Z" fill="url(#paint0_linear_8_261)"/>
-    <path d="M166 167C179.807 167 191 155.807 191 142C191 128.193 179.807 117 166 117C152.193 117 141 128.193 141 142C141 155.807 152.193 167 166 167Z" fill="url(#paint1_linear_8_261)"/>
-    <defs>
-        <linearGradient id="paint0_linear_8_261" x1="5.27903e-06" y1="117" x2="331" y2="117" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#F10060"/>
-            <stop offset="1" stop-color="#7A00F1"/>
-        </linearGradient>
-        <linearGradient id="paint1_linear_8_261" x1="5.27903e-06" y1="117" x2="331" y2="117" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#F10060"/>
-            <stop offset="1" stop-color="#7A00F1"/>
-        </linearGradient>
-    </defs>
-</svg>
+<img height="50px" src="https://github.com/nkamod/HW2_nkamod/raw/main/movie_theater_booking/static/assets/apex_icon.svg"> &nbsp;
 Apex Cinema
 </p>
 
